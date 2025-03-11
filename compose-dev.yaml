@@ -7,9 +7,9 @@ services:
     ports:
       - "8000:8000"
     environment:
-      DEBUG: 1
-      SECRET_KEY: 1
-      SOLR_URL: http://solr:8983/solr/pennstreaty
+      DEBUG: ${DEBUG:-1}
+      SECRET_KEY: ${SECRET_KEY:-1}
+      SOLR_URL: ${SOLR_URL:-http://solr:8983/solr/pennstreaty}
     depends_on:
       - db
       - solr
