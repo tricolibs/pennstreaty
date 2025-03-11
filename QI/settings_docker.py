@@ -10,7 +10,7 @@ ALLOWED_HOSTS = ['*']
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DATABASES['default'] = dj_database_url.config(
-    default='postgres://postgres:pennstreaty@db:5432/postgres'
+    default=os.environ.get('DB_URL')
 )
 
 HAYSTACK_CONNECTIONS = {
