@@ -3,8 +3,9 @@ FROM python:3.8
 WORKDIR /app
 ENV DJANGO_SETTINGS_MODULE=QI.settings_docker
 
-COPY requirements.txt /app/requirements.txt
+RUN pip install --upgrade pip wheel setuptools requests
 
+COPY requirements.txt /app/requirements.txt
 RUN pip install -r /app/requirements.txt
 
 COPY . /app
