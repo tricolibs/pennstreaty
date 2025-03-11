@@ -1,0 +1,6 @@
+pennstreaty.haverford.edu {
+	root /media /media
+	root /static /static
+	file_server
+	reverse_proxy web:8000
+}
