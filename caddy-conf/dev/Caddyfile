@@ -1,4 +1,4 @@
-localhost {
+{$HOST} {
 	root /media /media
 	root /static /static
 	file_server
