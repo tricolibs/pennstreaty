@@ -6,7 +6,7 @@ docker-status:
 
 .PHONY: reindex-solr
 reindex-solr:
-	docker exec pt-web python /app/manage.py rebuild_index
+	docker exec pt-web python /app/manage.py rebuild_index --noinput
 
 .PHONY: fix-solr-permissions
 fix-solr-permissions:
