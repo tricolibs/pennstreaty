@@ -63,5 +63,10 @@ systemctl restart rsyslog
 USERNAME=pennstreaty
 groupadd -f $USERNAME
 id $USERNAME || useradd --gid $USERNAME --groups docker --create-home --shell /bin/bash $USERNAME
-[ -f /home/$USERNAME/.ssh/id_rsa.pub ] || su $USERNAME -c ssh-keygen
+[ -f /home/$USERNAME/.ssh/id_ed25519.pub ] || su $USERNAME -c ssh-keygen
 
+#make solr user
+SOLR_USER=solr
+SOLR_ID=8983
+groupadd -f -g $SOLR_ID $SOLR_USER
+id $SOLR_USER || useradd --uid $SOLR_ID --gid $SOLR_ID --create-home --shell /bin/bash $SOLR_USER
