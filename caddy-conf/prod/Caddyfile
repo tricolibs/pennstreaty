@@ -12,9 +12,9 @@
   }
 }
 
-# tripenntreaty.brynmawr.edu {
-#   redir https://{$HOST}{uri}
-# }
+tripenntreaty.brynmawr.edu {
+  redir https://{$HOST}{uri}
+}
 
 # pennstreaty.haverford.edu {
 #   redir https://{$HOST}{uri}
