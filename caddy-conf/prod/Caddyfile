@@ -11,3 +11,11 @@
     reverse_proxy web:8000
   }
 }
+
+# tripenntreaty.brynmawr.edu {
+#   redir https://{$HOST}{uri}
+# }
+
+# pennstreaty.haverford.edu {
+#   redir https://{$HOST}{uri}
+# }
