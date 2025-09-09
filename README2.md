@@ -115,3 +115,26 @@ how things are set up.
 
 I don't know if there are any existing superusers on the production side,
 but you should be able to create and use them in the same way.
+
+## deployment and update
+
+For intial deployment there is a script `script/server-setup.sh` that can be
+run as root and will take care of a lot of the stuff that needs to happen 
+on the server.
+
+To deploy you then to check out the repo, copy over the media directory from
+the old server, copy over and install the database, and then just `docker 
+compose up -d` should build the web container and fetch and start everything 
+else. To get search you'll need to `make reindex-solr`.
+
+To do an update
+* log into the server
+* `git pull` to get the new code
+* bring the app down with `docker compose down`
+* build the new web container with `docker compose build`
+* bring things back up with `docker compose up -d`
+
+If there are Django changes requiring things like migrations, etc. we'll have
+to write a little bit more to deal with that, but I don't think we're there
+at this time. The main point is that specific upgrades might require additional
+specific actions depending on what they are, but this is the basic outline.
