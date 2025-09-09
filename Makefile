@@ -12,6 +12,10 @@ docker-status:
 reindex-solr:
 	docker exec pt-web python /app/manage.py rebuild_index --noinput
 
+.PHONY: create-superuser
+create-superuser:
+	docker exec -it pt-web python /app/manage.py createsuperuser
+
 .PHONY: fix-solr-permissions
 fix-solr-permissions:
 	echo "This must be run as root."

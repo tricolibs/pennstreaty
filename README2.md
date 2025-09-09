@@ -85,6 +85,14 @@ You can then bring up the rest of the stack with `docker compose up -d`.
 You'll want to grab the stuff under the `media/` directory from the production
 server if you want to see everything properly.
 
+## Creating a superuser/admin interface
+
+You can create a superuser for Django with `make create-superuser`, just
+follow the prompts.
+
+Once you have this, you can log in at `localhost/admin` to access the (very
+unpolished) admin interface.
+
 # Production
 
 We note here only significant differences from development.
@@ -102,3 +110,8 @@ In production the version of the app baked into the container is used.
 The proxy will automatically get certs for the host defined in the environment
 and the redirecting hosts. See `caddy-conf/prod/Caddyfile` for details on 
 how things are set up.
+
+## superuser/admin
+
+I don't know if there are any existing superusers on the production side,
+but you should be able to create and use them in the same way.
